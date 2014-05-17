@@ -6,11 +6,13 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'realtime_notifications.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
     url('^inbox/notifications/', include(notifications.urls)),
-    url(r'', include('user_sessions.urls', 'user_sessions'))
+    url(r'', include('user_sessions.urls', 'user_sessions')),
+
+    url(r'^$', 'rn.views.home', name='home'),
+    url(r'^send_notification/$', 'rn.views.send_notification', name='send_notification'),
+    url(r'^mark_as_read/$', 'rn.views.mark_as_read', name='mark_as_read'),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'admin/login.html'}, name='login'),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name='logout')
 )

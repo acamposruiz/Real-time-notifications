@@ -85,3 +85,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 SESSION_ENGINE = 'user_sessions.backends.db'
+FORCE_SCRIPT_NAME = '/'

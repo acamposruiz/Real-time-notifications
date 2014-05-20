@@ -83,6 +83,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+STATIC_ROOT = '/root/realtime_notifications/static/'
 STATIC_URL = '/static/'
 SESSION_ENGINE = 'user_sessions.backends.db'
 FORCE_SCRIPT_NAME = '/'
